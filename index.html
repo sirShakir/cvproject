@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="header">
+  <div class="modes" id="mode_1" onclick="swtich_Modes(1)"></div>
+  <div class="modes" id="mode_2" onclick="swtich_Modes(2)"></div>
+  <div class="modes" id="mode_3" onclick="swtich_Modes(3)"></div>
+  </div>
+
+  <div class="feed">
+    <img id="image">
+  </div>
+
+  <div class="footer" id="controls_MD">
+    <input class="input1" type="radio" name="activation" value="deactivated" onclick="deactivate_MD()">
+    <input class="input1" type="radio" name="activation" value="activated"  onclick="activate_MD()">
+    <input id="threshold" class="input2" type="number" name="threshold" min="1" max="100" onchange="update_Threshold()">
+    <input id="sensitivity" class="input2" type="number" name="sensitivity" min="1" max="100" onchange="update_Sensitivity()">
+  </div>
+  <div class="footer" id="controls_OD">
+      <input class="input1" type="radio" name="activation" value="deactivated" onclick="deactivate_OD()">
+      <input class="input1" type="radio" name="activation" value="activated"  onclick="activate_OD()">
+  </div>
+  <div class="footer" id="controls_RD">
+
+  </div>
+
+
+
+
+  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+  <script>
+    var socket = io();
+    //const imageElm = document.getElementById("image");
+
+    socket.on('sendImage', function(data) {
+        const imageElm = document.getElementById("image");
+        //console.log("I got some image data" + data);
+        //imageElm.src = `data:image/png;base64,${data}`;
+      imageElm.src = 'data:image/jpeg;base64,' + data;
+    })
+
+  
+    //setInterval(function(){ socket.emit('requestFrame'); console.log("i sent data ")}, 200);
+  </script>
+</body>
+
+</html>

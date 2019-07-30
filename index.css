@@ -1,0 +1,40 @@
+.modes{
+    width: 32vw;
+    height: 20vh;
+    background: whitesmoke;
+    float: left;    
+}
+.feed{
+    width: 96vw;
+    height: 60vh;
+    background-color: green;
+}
+#image{
+    height: 100%;
+    width: 100%;
+}
+
+.header{
+    width: 96vw;
+    height: 20vh;
+    background-color: gray;
+    display: block;
+}
+.footer{
+    width: 96vw;
+    height: 20vh;
+    background-color: gray;
+    display: block;
+}
+input{
+    float: left;
+    width: 16%;
+    height: 95%;
+}
+#controls_OD{
+    display: none;
+}
+#controls_RD{
+    display: none;
+}
+
