@@ -10,7 +10,7 @@
     "@tensorflow/tfjs-node": "^1.2.5",
     "babel-register": "^6.26.0",
     "canvas": "^2.5.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http": "0.0.0",
     "opencv4nodejs": "^5.1.0",
     "pug": "^2.0.4",
